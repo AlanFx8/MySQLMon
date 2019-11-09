@@ -1,0 +1,261 @@
+/*INDEX
+@RESET-SHEET
+@BODY
+@SITE-WRAPPER
+@CONTENT
+@HEADER AND FOOTER
+@FORM
+@PHP-MESSAGES
+@SHOW_MON
+*/
+/*@RESET-SHEET*/
+@import url('reset.css');
+
+/*HTML*/
+html {
+    height: 100%;
+}
+
+/*@BODY*/
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 40em){
+    body {
+        background-color: #000000;
+        background-image: repeating-linear-gradient(-45deg, #8C1C1C 0, #70185E 5%, #1C3F1A 15%, #20264F 25%, yellow 35%, #8C1C1C 50%);
+        background-size: 100% 100%;
+    }
+}
+
+/*@SITE-WRAPPER*/
+#siteWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* min-height: 100vh; */
+}
+
+@media screen and (min-width: 40em){
+    #siteWrapper {
+        width: 70%;
+        margin: 1em auto;
+        border: solid 1px #000000;
+    }
+}
+
+@media screen and (min-width: 75em){
+    #siteWrapper {
+        width: 80%;
+        max-width: 90em;
+        margin: 2em auto;
+    }
+}
+
+/*@CONTENT*/
+#content {
+    /* flex: 1; */
+    padding: 1em;
+    background-color: #ddd;
+}
+
+/*@HEADER AND FOOTER*/
+#mainHeader, #mainFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4em;
+}
+
+#mainHeader {
+    border-bottom: solid 1px #000000;
+    background-color: #7CF4FF;
+    background-image: radial-gradient(circle, #C9FEFF 60%, transparent);
+}
+
+#mainFooter {
+    border-top: solid 1px #000000;
+    background-color: #FEA3EE;
+    background-image: radial-gradient(circle, #FFCCFF 60%, transparent);
+}
+
+/*A @supports function is used to support IE11*/
+@supports (min-height: 100vh) {
+    #siteWrapper {
+        min-height: 100vh;
+    }
+
+    #content {
+        flex: 1;
+    }
+
+    html {
+        height: auto;
+    }
+  }
+
+/*@FORM*/
+@media screen and (min-width: 40em){
+    form {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+.formSet {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+}
+
+.formSet + .formSet {
+    margin-top: .5em;
+}
+
+.formSet input, .formSet textarea, .formSet label {
+    width: 100%;
+    line-height: 2em;
+}
+
+.formSet input, .formSet textarea {
+    border: solid 1px #000000;
+    border-radius: .5em;
+    padding: .5em;
+}
+
+.formSet input[type="file"] {
+    border: none;
+}
+
+.formSet textarea {
+    resize: none;
+}
+
+.formSet select {
+    border: solid 1px #000000;
+    border-radius: .5em;
+    text-align: center;
+    height: 2em;
+}
+
+select + select {
+    margin-bottom: .5em;
+}
+
+.formSet label {
+    text-align: center;
+    font-style: italic;
+}
+
+.errorMsg {
+    width: 100%;
+    line-height: 2em;
+    margin-top: .5em;
+    color: red;
+    text-align: center;
+    background-color: #000000;
+    border-radius: .5em;
+    border: solid 1px red;
+}
+
+button {
+    border: solid 1px #000000;
+    border-radius: .5em;
+    width: 12em;
+    line-height: 2;
+    font-weight: bold;
+    font-style: italic;
+}
+
+button:hover {
+    font-style: normal;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 40em){
+    .formSet {
+        flex-direction: row-reverse;
+    }
+
+    .formSet label {
+        width: 40%;
+    }
+
+    .formSet input, .formSet textarea {
+        width: 60%;
+    }
+
+    .formSet select {
+        width: 29%;
+        text-align: center;
+    }
+
+    select + select {
+        margin-right: 2%;
+    }
+}
+
+/*@PHP-MESSAGES*/
+#phpError {
+    margin-bottom: .5em;
+}
+
+.phpErrorMSG {
+    width: 100%;
+    padding: .25em;
+    text-align: center;
+    background-color: #b85c5c;
+    border: solid 2px #5a2a2a;
+}
+
+@media screen and (min-width: 40em){
+    #phpErrors {
+        width: 60%;
+        margin: .5em auto;
+    }
+}
+
+/*@SHOW_MON*/
+#orderBTNWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: solid 1px #000000;
+}
+
+#orderBTNWrapper a {
+    display: block;
+    line-height: 2em;
+    text-align: center;
+    background-color: #666666;
+    font-weight: bold;
+}
+
+#orderBTNWrapper a:hover {
+    background-color: #999999;
+    font-style: italic;
+}
+
+#monBTNWrapper, #showMonWrapper, #amendMonWrapper {
+    margin: .5em;
+}
+
+.getMonBTN {
+    display: inline-block;
+    background-color: #ffffff;
+    font-weight: bold;
+    border: solid 2px rgba(0, 0, 0, .5);
+    border-radius: .5em;
+    color: rgba(0, 0, 0, .5);
+    text-align: center;
+    padding: .5em;
+    min-width: 8em;
+    margin-right: .25em;
+    margin-top: .25em;
+}
+
+.getMonBTN:hover {
+    opacity: .8;
+    font-style: italic;
+}
