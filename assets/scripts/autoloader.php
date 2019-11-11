@@ -12,7 +12,7 @@
 
         //We start at the site root (not ./) so classes in subfolders can use it
         if (is_null($dir))
-            $dir = 'C:/wamp64/www/ProjectMySQLMon/MySQLMonV2/assets/scripts/';
+            $dir = SITE_ROOT;
 
         //Go through each folder until we get the class
         foreach (scandir($dir) as $file) {
